@@ -36,7 +36,7 @@ public class Queen : Bee
     {
         StatusReport = $"Vault report:\n{HoneyVault.StatusReport}\n" +
                        $"\nEgg count: {eggs:0.0}\nUnassigned workers: {unassignedWorkers:0.0}\n" +
-                       $"{WorkerStatus("Nectar Collector")}\n{WorkerStatus("Honey Manufacturer")}" +
+                       $"{WorkerStatus("Nectar Collector")}\n{WorkerStatus("Honey Manufacture")}" +
                        $"\n{WorkerStatus("Egg Care")}\nTOTAL WORKERS: {workers.Length}";
     }
 
@@ -66,12 +66,15 @@ public class Queen : Bee
         {
             case "Nectar Collector":
                 AddWorker(new NectarCollector());
+                Console.WriteLine("Nectar Collector Button Pressed");
                 break;
-            case "Honey Manufacturer":
+            case "Honey Manufacture":
                 AddWorker(new HoneyManufacture());
+                Console.WriteLine("Honey Manufacture Button Pressed");
                 break;
             case "Egg Care":
                 AddWorker(new EggCare(this));
+                Console.WriteLine("Egg Care Button Pressed");
                 break;
         }
 
